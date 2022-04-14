@@ -19,21 +19,13 @@ function init() {
    let btnRec = document.getElementById('TurnOff');
 
    btnRec.onclick = function() {
-       if (document.getElementById("rectangle").style.display == "block"){
-        return document.getElementById("rectangle").style.display="none"; 
-       } else {
-            return document.getElementById("rectangle").style.display="block";
-       };
+        document.getElementById("rectangle").style.display="none";
    };
 
    let btnRec_A = document.getElementById('TurnOff_A');
 
    btnRec_A.onclick = function() {
-       if (document.getElementById("rectangle_A").style.display == "block"){
-        return document.getElementById("rectangle_A").style.display="none"; 
-       } else {
-            return document.getElementById("rectangle_A").style.display="block";
-       };
+        document.getElementById("rectangle_A").style.display="none";
    };
 
 
