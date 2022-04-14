@@ -1,0 +1,60 @@
+
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    #field {
+      width: 500px;
+      height: 350px;
+      border: 4px solid black;
+      background-color: #19a919;
+      position: relative;
+    }
+
+    #ball {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 50px;
+      height: 50px;
+      transition: all 2s;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="field">
+    <img src="ball.svg" id="ball"> 
+  </div>
+
+  <script>
+    field.onclick = function(event) {
+      let fieldPos = this.getBoundingClientRect();
+
+      let ballPos = {
+        top: event.clientY - fieldPos.top - field.clientTop - ball.clientHeight / 2,
+        left: event.clientX - fieldPos.left - field.clientLeft - ball.clientWidth / 2
+      };
+
+      if (ballPos.top < 0) ballPos.top = 0;
+
+      if (ballPos.left < 0) ballPos.left = 0;
+
+      if (ballPos.left + ball.clientWidth > field.clientWidth) {
+        ballPos.left = field.clientWidth - ball.clientWidth;
+      }
+
+      if (ballPos.top + ball.clientHeight > field.clientHeight) {
+        ballPos.top = field.clientHeight - ball.clientHeight;
+      }
+
+      ball.style.left = ballPos.left + 'px';
+      ball.style.top = ballPos.top + 'px';
+    }
+  </script>
+
+</body>
+</html>
